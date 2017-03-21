@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+"""
+Collects repositories from https://github.com/showcases.
+"""
+
 import re
 import requests
 
