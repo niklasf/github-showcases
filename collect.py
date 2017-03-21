@@ -37,8 +37,11 @@ def collect_showcases(category):
 if __name__ == "__main__":
     categories = collect_categories(4)
     repos = set()
+
+    print("url", "lang", "stars", "forks", sep="\t")
+
     for category in categories:
         for repo, lang, stars, forks in collect_showcases(category):
             if repo not in repos:
                 repos.add(repo)
-                print(repo, lang, stars, forks)
+                print(repo, lang, stars, forks, sep="\t")
