@@ -24,7 +24,7 @@ def collect_showcases(category):
         repo = "https://github.com{0}".format(item.find("h3").find("a").get("href"))
 
         lang_item = item.find(itemprop="programmingLanguage")
-        lang = lang_item.text.strip() if lang_item else "?"
+        lang = lang_item.text.strip() if lang_item else ""
 
         stars = int(item.find(href=re.compile("stargazers")).text.strip().replace(",", ""))
 
@@ -38,7 +38,7 @@ if __name__ == "__main__":
     categories = collect_categories(4)
     repos = set()
 
-    print("url", "lang", "stars", "forks", sep="\t")
+    print("url", "primary language", "stars", "forks", sep="\t")
 
     for category in categories:
         for repo, lang, stars, forks in collect_showcases(category):
