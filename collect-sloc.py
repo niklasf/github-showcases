@@ -8,7 +8,7 @@ import os
 
 
 def loc(owner, repo):
-    report = subprocess.check_output(["loc", os.path.join("mirror", owner, repo)])
+    report = subprocess.check_output(["loc", "--exclude", "\\.txt", os.path.join("mirror", owner, repo)])
     lines = report.decode("utf-8").splitlines()
     _, files, _, _, _, sloc = lines[-2].split()
     return int(files), int(sloc)
