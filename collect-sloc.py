@@ -15,7 +15,7 @@ def loc(owner, repo):
 
 
 if __name__ == "__main__":
-    print("url", "lang", "files", "loc", sep="\t")
+    print("url", "primary language", "files", "sloc", sep="\t")
 
     for line in itertools.islice(open("showcases.tsv"), 1, None):
         url, lang, stars, forks = line.split("\t")
